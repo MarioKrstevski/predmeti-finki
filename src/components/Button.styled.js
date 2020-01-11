@@ -6,10 +6,13 @@ import tw from 'tailwind.macro';
 const StyledButton = styled.header`
     ${tw`
     bg-black 
-    text-white
     p-2
     rounded-lg
     m-2
+    border
+    text-gray-500
+    hover:cursor-pointer
+    active:bg-blue-200
     `};
 `;
 const Button = () => {
