@@ -21,12 +21,11 @@ const App = () => {
             <button className="btn btn-blue btn-blue:hover"
             onClick={()=>setModalShow(!modalShow)}
             >
-                Magic button
+                Magic button new stuff aaaaa
             </button>
 
             <StyledButton />
         </div>
     );
 };
-
 export default process.env.NODE_ENV === "development" ? hot(App) : App;
