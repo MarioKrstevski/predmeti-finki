@@ -1,87 +1,34 @@
 import React from 'react';
-import { Layout, Menu, Breadcrumb, Icon, Button } from 'antd';
+import { Layout, Menu } from 'antd';
+import HeaderContent from './Header/HeaderContent';
+import Sidebar from './Sidebar/Sidebar';
+import FooterContent from './Footer/FooterContent';
+import Courses from './Content/Courses';
 
-const { SubMenu } = Menu;
 const { Header, Footer, Sider, Content } = Layout;
 const AppLayout = () => {
     return (
-        <Layout style={{
-            minHeight: '100vh'
-        }}>
+        <Layout
+            className="max-h-screen min-h-screen"
+        >
             <Header className="header">
-                <div className="logo" />
-                <Menu
-                    theme="dark"
-                    mode="horizontal"
-                    defaultSelectedKeys={['2']}
-                    style={{ lineHeight: '60px' }}
-                >
-                    <Menu.Item key="1">nav 1</Menu.Item>
-                    <Menu.Item key="2">nav 2</Menu.Item>
-                    <Menu.Item key="3">nav 3</Menu.Item>
-                </Menu>
+                <HeaderContent />
             </Header>
             <Layout>
-                <Sider width={320} style={{ background: '#fff' }}>
-                    <Menu
-                        mode="inline"
-                        defaultSelectedKeys={['1']}
-                        defaultOpenKeys={['sub1']}
-                        style={{ height: '100%', borderRight: 0 }}
-                    >
-                        <SubMenu
-                            key="sub1"
-                            title={
-                                <span>
-                                    <Icon type="user" />
-                                    subnav 1
-                                </span>
-                            }
-                        >
-                          <Button>Test</Button>
-                        </SubMenu>
-                        <SubMenu
-                            key="sub2"
-                            title={
-                                <span>
-                                    <Icon type="laptop" />
-                                    subnav 2
-                                </span>
-                            }
-                        >
-                            <Menu.Item key="5">option5</Menu.Item>
-                            <Menu.Item key="6">option6</Menu.Item>
-                            <Menu.Item key="7">option7</Menu.Item>
-                            <Menu.Item key="8">option8</Menu.Item>
-                        </SubMenu>
-                        <SubMenu
-                            key="sub3"
-                            title={
-                                <span>
-                                    <Icon type="notification" />
-                                    subnav 3
-                                </span>
-                            }
-                        >
-                            <Menu.Item key="9">option9</Menu.Item>
-                            <Menu.Item key="10">option10</Menu.Item>
-                            <Menu.Item key="11">option11</Menu.Item>
-                            <Menu.Item key="12">option12</Menu.Item>
-                        </SubMenu>
-                    </Menu>
+                <Sider width={340} className="bg-white">
+                    <Sidebar />
                 </Sider>
                 <Layout style={{ background: '#F8F9FA' }}>
-                        <Content
-                            style={{
-                                background: '#F8F9FA',
-                                padding: '30px 30px 16px',
-                                margin: 0,
-                                minHeight: 280,
-                            }}
-                        >
-                            Content
-                        </Content>
-                        <Footer>Footer</Footer>
+                    <Content
+                        className="bg-gray-200 m-0 p-6"
+                    >
+                        <Courses />
+                    </Content>
+                    <Footer
+                        className="h-16 m-0 p-0 pl-4 flex items-center"
+                    >
+                        <FooterContent />
+                    </Footer>
                 </Layout>
             </Layout>
         </Layout>
