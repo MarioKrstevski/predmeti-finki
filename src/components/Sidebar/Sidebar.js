@@ -16,7 +16,7 @@ const Sidebar = (filterByName) => {
                 <CourseDetails />
             )}
         </div>
-    );
+    )
 };
 
 export default Sidebar;

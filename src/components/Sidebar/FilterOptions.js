@@ -24,7 +24,7 @@ const FilterOptions = () => {
                 <div className="px-6 py-4  mt-5">
                     <div>
                         <div className="flex justify-between content-center border-gray-600 tracking-wide p-0">
-                            <h3 className="font-semibold text-gray-700 text-base">
+                            <h3 className="font-semibold text-gray-700 text-sm">
                                 What do you want to study?
                             </h3>
                             <div
@@ -45,7 +45,7 @@ const FilterOptions = () => {
                         />
                     </div>
                 </div>
-        
+
                 <SubMenu
                     key="sub1"
                     title={

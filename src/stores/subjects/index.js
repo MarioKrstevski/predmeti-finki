@@ -1,8 +1,34 @@
 import { applyMiddleware, createStore } from 'redux';
 
 const initialState = {
-    subjects: [{ id: 1, name: 'Strukturno', semester: 1 }],
-    filtered: [{ id: 1, name: 'Strukturno', semester: 1 }],
+    subjects: [
+        { id: 1, name: 'Strukturno', semester: 1 },
+        { id: 2, name: 'Algoritmi I Podatocni strukturi', semester: 3 },
+        { id: 3, name: 'Objektno Orientirano Programiranje', semester: 2 },
+        { id: 4, name: 'Kalkulus 1', semester: 1 },
+        { id: 5, name: 'Diskretna Matematika 1', semester: 1 },
+        { id: 6, name: 'Kalkulus 2', semester: 2 },
+        { id: 7, name: 'Diskretna Matematika 2', semester: 2 },
+        {
+            id: 8,
+            name: 'Arhitektura i Organizacija na Kompjuteri',
+            semester: 3,
+        },
+    ],
+    filtered: [
+        { id: 1, name: 'Strukturno', semester: 1 },
+        { id: 2, name: 'Algoritmi I Podatocni strukturi', semester: 3 },
+        { id: 3, name: 'Objektno Orientirano Programiranje', semester: 2 },
+        { id: 4, name: 'Kalkulus 1', semester: 1 },
+        { id: 5, name: 'Diskretna Matematika 1', semester: 1 },
+        { id: 6, name: 'Kalkulus 2', semester: 2 },
+        { id: 7, name: 'Diskretna Matematika 2', semester: 2 },
+        {
+            id: 8,
+            name: 'Arhitektura i Organizacija na Kompjuteri',
+            semester: 3,
+        },
+    ],
 };
 
 // we are not using thunk

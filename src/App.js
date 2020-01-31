@@ -1,8 +1,8 @@
 import { hot } from 'react-hot-loader/root';
 import { setConfig } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-// import store from './stores/subjects';
-import store from './stores/lib/redux';
+import store from './stores/subjects';
+// import store from './stores/lib/redux';
 import React from 'react';
 import AppLayout from './components/AppLayout';
 import InboxScreen from './storybook-examples/InboxScreen';
@@ -13,8 +13,8 @@ setConfig({
 const App = () => {
     return (
         <Provider store={store}>
-            <InboxScreen />
-            {/* <AppLayout />; */}
+            {/* <InboxScreen /> */}
+            <AppLayout />
         </Provider>
     );
 };

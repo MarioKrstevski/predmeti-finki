@@ -4,13 +4,13 @@ import HeaderContent from './Header/HeaderContent';
 import Sidebar from './Sidebar/Sidebar';
 import FooterContent from './Footer/FooterContent';
 import Courses from './Content/Courses';
+import CourseDetails from './Content/CourseDetails';
+import { Router } from '@reach/router';
 
 const { Header, Footer, Sider, Content } = Layout;
 const AppLayout = () => {
     return (
-        <Layout
-            className="max-h-screen min-h-screen"
-        >
+        <Layout className="max-h-screen min-h-screen">
             <Header className="header">
                 <HeaderContent />
             </Header>
@@ -19,14 +19,13 @@ const AppLayout = () => {
                     <Sidebar />
                 </Sider>
                 <Layout style={{ background: '#F8F9FA' }}>
-                    <Content
-                        className="bg-gray-200 m-0 p-6"
-                    >
-                        <Courses />
+                    <Content className="bg-gray-200 m-0 p-6">
+                        <Router>
+                            <Courses path="/" default/>
+                            <CourseDetails path="/subject/:subjectName" />
+                        </Router>
                     </Content>
-                    <Footer
-                        className="h-16 m-0 p-0 pl-4 flex items-center"
-                    >
+                    <Footer className="h-16 m-0 p-0 pl-4 flex items-center">
                         <FooterContent />
                     </Footer>
                 </Layout>
