@@ -3,7 +3,8 @@ import React from 'react';
 import { Menu, Icon, Button } from 'antd';
 
 const { SubMenu } = Menu;
-const CourseDetails = () => {
+const CourseDetails = (subjectName) => {
+    console.log('SN', subjectName)
     return (
         <>
             <Menu

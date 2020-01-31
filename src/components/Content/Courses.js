@@ -26,9 +26,11 @@ const Courses = ({ filtered }) => {
             </div>
             <div className="flex flex-row flex-wrap flex justify-center">
                 {filtered.map(({ id, name, semester }) => (
-                    <div className=" max-w-md pr-2 pb-2 w-full lg:w-1/2">
+                    <div
+                        key={name}
+                        className=" max-w-md pr-2 pb-2 w-full lg:w-1/2"
+                    >
                         <Link
-                            key={name}
                             to={
                                 '/subject/' +
                                 name.toLowerCase().replace(/ /g, '-')

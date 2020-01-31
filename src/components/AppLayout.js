@@ -5,7 +5,7 @@ import Sidebar from './Sidebar/Sidebar';
 import FooterContent from './Footer/FooterContent';
 import Courses from './Content/Courses';
 import CourseDetails from './Content/CourseDetails';
-import { Router } from '@reach/router';
+import { Router, Location } from '@reach/router';
 
 const { Header, Footer, Sider, Content } = Layout;
 const AppLayout = () => {
@@ -16,12 +16,13 @@ const AppLayout = () => {
             </Header>
             <Layout>
                 <Sider width={340} className="bg-white">
-                    <Sidebar />
+                    <Sidebar/>
                 </Sider>
+
                 <Layout style={{ background: '#F8F9FA' }}>
-                    <Content className="bg-gray-200 m-0 p-6">
+                    <Content className="bg-gray-200 m-0 p-6 overflow-y-scroll">
                         <Router>
-                            <Courses path="/" default/>
+                            <Courses path="/" default />
                             <CourseDetails path="/subject/:subjectName" />
                         </Router>
                     </Content>
