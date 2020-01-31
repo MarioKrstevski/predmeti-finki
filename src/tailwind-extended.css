@@ -1,0 +1,24 @@
+.min-w-20 {
+    min-width: 20rem;
+}
+.min-w-xs {
+    min-width: 20rem;
+}
+.min-w-sm {
+    min-width: 24rem;
+}
+.min-w-md {
+    min-width: 28rem;
+}
+.min-w-lg {
+    min-width: 32rem;
+}
+.min-w-xl {
+    min-width: 36rem;
+}
+.min-w-2xl {
+    min-width: 42rem;
+}
+.min-w-3xl {
+    min-width: 48rem;
+}

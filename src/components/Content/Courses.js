@@ -7,12 +7,11 @@ const { Option } = Select;
 const Courses = ({ filtered }) => {
     console.log(filtered);
     return (
-        <>
-            {' '}
-            <div className="p-4 mb-3 flex justify-between border-b-2 border-gray-400">
-                <div>Course Details or Course List</div>
-                <div>
-                    <span className="mr-3">Sort By</span>
+        <div className="container min-w-sm">
+            <div className="p-4 mb-3 flex justify-between items-baseline  border-b-2 border-gray-400">
+                <div className="mr-3">Course Details or Course List</div>
+                <div className="flex items-baseline ">
+                    <span className="mr-3 whitespace-no-wrap">Sort By</span>
                     <Select defaultValue="semester" className="w-32">
                         <Option value="semester">Semester</Option>
                         <Option value="year">Year</Option>
@@ -25,9 +24,9 @@ const Courses = ({ filtered }) => {
                     </Select>
                 </div>
             </div>
-            <div className="flex flex-row flex-wrap flex justify-between">
+            <div className="flex flex-row flex-wrap flex justify-center">
                 {filtered.map(({ id, name, semester }) => (
-                    <div className="w-1/2 pr-2 pb-2">
+                    <div className=" max-w-md pr-2 pb-2 w-full lg:w-1/2">
                         <Link
                             key={name}
                             to={
@@ -35,14 +34,17 @@ const Courses = ({ filtered }) => {
                                 name.toLowerCase().replace(/ /g, '-')
                             }
                         >
-                            <Card className="hover:shadow-md hover:bg-indigo-100 hover:border-gray-500">
-                                {id} {name} {semester}
+                            <Card
+                                className="hover:shadow-md hover:bg-indigo-100 hover:border-gray-500"
+                                title={id + ' ' + name + ' ' + semester}
+                            >
+                                "Lorem Ipsum"
                             </Card>
                         </Link>
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     );
 };
 
