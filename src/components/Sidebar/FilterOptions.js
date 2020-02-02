@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Menu, Icon, Button, Input } from 'antd';
 import { filterByName } from '../../stores/subjects';
+import ProfessorSelect from './ProfessorSelect';
+import SemesterCheckboxes from './SemesterCheckboxes';
 
 const { SubMenu } = Menu;
-const FilterOptions = () => {
+const FilterOptions = ({ professors }) => {
     const [searchText, setSearchText] = useState('');
     const handleSearchByname = e => {
         setSearchText(e.target.value);
@@ -14,6 +16,7 @@ const FilterOptions = () => {
         setSearchText('');
         filterByName('');
     };
+
     return (
         <>
             <Menu
@@ -21,6 +24,7 @@ const FilterOptions = () => {
                 defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}
             >
+                {/* Filter Header-ish */}
                 <div className="px-6 py-4  mt-5">
                     <div>
                         <div className="flex justify-between content-center border-gray-600 tracking-wide p-0">
@@ -36,26 +40,36 @@ const FilterOptions = () => {
                         </div>
                     </div>
                 </div>
+                {/* Main search */}
                 <div className="px-6 py-4">
-                    <div>
-                        <Input
-                            placeholder="Search by name"
-                            value={searchText}
-                            onChange={handleSearchByname}
-                        />
-                    </div>
+                    <Input
+                        placeholder="Search by name"
+                        value={searchText}
+                        onChange={handleSearchByname}
+                    />
                 </div>
-
                 <SubMenu
-                    key="sub1"
+                    key="professors"
                     title={
-                        <span>
+                        <div className="inline-flex items-center">
                             <Icon type="user" />
-                            subnav 1
-                        </span>
+                            <div> By Professors </div>
+                        </div>
                     }
-                ></SubMenu>
-
+                >
+                    <ProfessorSelect professors={professors}> </ProfessorSelect>
+                </SubMenu>
+                <SubMenu
+                    key="semester"
+                    title={
+                        <div className="inline-flex items-center">
+                            <Icon type="user" />
+                            <div> By semester</div>
+                        </div>
+                    }
+                >
+                    <SemesterCheckboxes> </SemesterCheckboxes>
+                </SubMenu>
                 <SubMenu
                     key="sub2"
                     title={
@@ -65,7 +79,6 @@ const FilterOptions = () => {
                         </span>
                     }
                 >
-                    <Menu.Item key="5">option3</Menu.Item>
                     <Menu.Item key="6">option6</Menu.Item>
                     <Menu.Item key="7">option7</Menu.Item>
                     <Menu.Item key="8">option8</Menu.Item>
@@ -88,5 +101,4 @@ const FilterOptions = () => {
         </>
     );
 };
-
 export default FilterOptions;

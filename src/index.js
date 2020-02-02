@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css';
 import './styles.css';
 import './tailwind-extended.css';
+import './custom.css';
 // import './index.css'
 
 ReactDOM.render(<App />, document.getElementById('root'));
