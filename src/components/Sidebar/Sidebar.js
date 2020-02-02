@@ -9,8 +9,8 @@ const Sidebar = (filterByName, location) => {
     useEffect(() => {}, []);
 
     return (
-        <div className="h-full border-r-0">
-         
+        // 64px is the Header height
+        <div className="h-full border-r-0 overflow-y-scroll" >
             <Router>
                 <FilterOptions path="/" default />
                 <CourseDetails path="/subject/:subjectName" />
